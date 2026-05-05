@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# frontend
+frontend-stock/node_modules
+frontend-stock/.next
+frontend-stock/coverage
+
+# backend
+**/bin
+**/obj
+
+# env
+.env
+.env.*
+!.env.example
+frontend/.env.local
+backend/src/ECommerce.Api/appsettings.Local.json
+
+# logs
+*.log
