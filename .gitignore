@@ -14,7 +14,7 @@ frontend-stock/coverage
 .env
 .env.*
 !.env.example
-frontend/.env.local
+frontend-stock/.env.local
 backend/src/ECommerce.Api/appsettings.Local.json
 
 # logs
