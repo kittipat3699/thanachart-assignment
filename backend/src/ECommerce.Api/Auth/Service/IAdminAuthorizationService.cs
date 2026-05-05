@@ -1,4 +1,4 @@
-namespace ECommerce.Api.Features.Admin.Users.Service;
+namespace ECommerce.Api.Auth.Service;
 
 public interface IAdminAuthorizationService
 {

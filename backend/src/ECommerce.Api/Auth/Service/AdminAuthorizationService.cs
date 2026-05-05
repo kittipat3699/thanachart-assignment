@@ -1,7 +1,7 @@
 using Dapper;
 using ECommerce.Api.Data;
 
-namespace ECommerce.Api.Features.Admin.Users.Service;
+namespace ECommerce.Api.Auth.Service;
 
 public sealed class AdminAuthorizationService : IAdminAuthorizationService
 {

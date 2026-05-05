@@ -1,7 +1,7 @@
 using ECommerce.Api.Auth;
 using ECommerce.Api.Controllers;
+using ECommerce.Api.Features.Admin.Orders.Service;
 using ECommerce.Api.Features.Orders.Model;
-using ECommerce.Api.Features.Orders.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,9 +11,9 @@ namespace ECommerce.Api.Features.Admin.Orders.Controller;
 [Route("api/v1/admin/orders")]
 public sealed class AdminOrdersController : ApiControllerBase
 {
-    private readonly IOrderService _orderService;
+    private readonly IAdminOrderService _orderService;
 
-    public AdminOrdersController(IOrderService orderService)
+    public AdminOrdersController(IAdminOrderService orderService)
     {
         _orderService = orderService;
     }
@@ -22,7 +22,7 @@ public sealed class AdminOrdersController : ApiControllerBase
     [ProducesResponseType(typeof(IReadOnlyList<AdminOrderSummaryDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> ListOrders(CancellationToken cancellationToken)
     {
-        var orders = await _orderService.ListOrdersForAdminAsync(cancellationToken);
+        var orders = await _orderService.ListOrdersAsync(cancellationToken);
         return Ok(orders);
     }
 
@@ -31,7 +31,7 @@ public sealed class AdminOrdersController : ApiControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetOrder(Guid id, CancellationToken cancellationToken)
     {
-        var order = await _orderService.GetOrderDetailForAdminAsync(id, cancellationToken);
+        var order = await _orderService.GetOrderDetailAsync(id, cancellationToken);
         if (order is null)
         {
             return NotFound();

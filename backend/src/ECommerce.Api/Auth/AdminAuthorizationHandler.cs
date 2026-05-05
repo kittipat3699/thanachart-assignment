@@ -1,5 +1,5 @@
 using System.Security.Claims;
-using ECommerce.Api.Features.Admin.Users.Service;
+using ECommerce.Api.Auth.Service;
 using Microsoft.AspNetCore.Authorization;
 
 namespace ECommerce.Api.Auth;

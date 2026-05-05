@@ -1,7 +1,8 @@
 using System.Security.Claims;
 using ECommerce.Api.Auth;
+using ECommerce.Api.Auth.Service;
 using ECommerce.Api.Data;
-using ECommerce.Api.Features.Admin.Users.Service;
+using ECommerce.Api.Features.Admin.Orders.Service;
 using ECommerce.Api.Features.Items.Service;
 using ECommerce.Api.Features.Orders.Service;
 using ECommerce.Api.Models;
@@ -17,10 +18,8 @@ builder.Services.AddSingleton<IDbConnectionFactory, NpgsqlConnectionFactory>();
 
 builder.Services.AddScoped<IItemService, ItemService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
-builder.Services.AddScoped<IAdminUserService, AdminUserService>();
+builder.Services.AddScoped<IAdminOrderService, AdminOrderService>();
 builder.Services.AddScoped<IAdminAuthorizationService, AdminAuthorizationService>();
-
-builder.Services.AddHttpClient<ISupabaseAuthAdminClient, SupabaseAuthAdminClient>();
 builder.Services.AddScoped<IAuthorizationHandler, AdminAuthorizationHandler>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
