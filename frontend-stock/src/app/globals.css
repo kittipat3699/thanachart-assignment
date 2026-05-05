@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 220 41% 97%;
+  --foreground: 224 34% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 224 34% 12%;
+  --primary: 221 83% 57%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 215 40% 93%;
+  --secondary-foreground: 224 22% 22%;
+  --muted: 215 31% 90%;
+  --muted-foreground: 218 14% 43%;
+  --accent: 196 86% 56%;
+  --accent-foreground: 224 34% 12%;
+  --destructive: 0 72% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 30% 84%;
+  --input: 214 30% 84%;
+  --ring: 221 83% 57%;
+  --radius: 1rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  min-height: 100vh;
+  color: hsl(var(--foreground));
+  font-family: var(--font-body), "SF Pro Display", "Helvetica Neue", sans-serif;
+  background:
+    radial-gradient(1250px 700px at -8% -12%, rgba(153, 187, 255, 0.46), transparent 58%),
+    radial-gradient(1180px 580px at 106% 0%, rgba(146, 231, 255, 0.5), transparent 56%),
+    radial-gradient(980px 620px at 50% 118%, rgba(196, 214, 255, 0.34), transparent 62%),
+    linear-gradient(180deg, #f9fbff 0%, #eff4ff 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.25;
+  z-index: -1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), "SF Pro Display", "Avenir Next", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.page-enter {
+  animation: rise-in 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-shell {
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.38));
+  box-shadow:
+    0 28px 80px -42px rgba(34, 64, 140, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.liquid-title {
+  background: linear-gradient(120deg, #1f2a47 10%, #3459d5 44%, #4cb2da 86%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
