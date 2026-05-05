@@ -1,5 +1,3 @@
-# NovaCart Monorepo
-
 E-commerce MVP ในโครงสร้าง monorepo ตาม requirement:
 
 - `frontend`: Next.js (App Router + TypeScript + Tailwind + shadcn-style components)
